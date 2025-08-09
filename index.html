@@ -39,25 +39,26 @@
     }
 
     .marker-position {
-      position: absolute;
-      top: 130px;
-      left: 10px;
-      z-index: 1001;
+    position: absolute;
+      top: 100px;
+    right: 10px; /* antes estaba left: 10px */
+    z-index: 1001;
       background: white;
       padding: 5px;
-      font-size: 14px;
+      font-size: 24px;
     }
 
-    #btn-agregar-punto {
-      position: absolute;
-      top: 170px;
-      left: 10px;
-      z-index: 1001;
-      background-color: lightblue;
-      padding: 5px;
-      border: none;
-      cursor: pointer;
-    }
+   #btn-agregar-punto {
+  position: absolute;
+  top: 170px;
+  right: 50px;
+  z-index: 1001;
+  background-color: lightblue;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+}
 
     /* Navbar personalizada */
     .navbar {
@@ -92,18 +93,20 @@
     <a  
        class="navbar-brand" 
        style="color: white; text-align: center; white-space: nowrap;font-weight: bold; ">
-      Cambios del Territorio (Ortomosaico 1966 - Imagen Satelital 2025 ) - Departamento de Geografía UDELAR
+      Tu territorio desde el cielo (Ortomosaico 1966 - Imagen Satelital 2025 ) - Departamento de Geografía -Facultad de Ciencias - Udelar
     </a>
   </div>
 </nav>
 
 
+
+
 <div class="marker-position">Información del marcador: </div>
-<button id="btn-agregar-punto">Añadir Punto</button>
+<button id="btn-agregar-punto" style="font-weight: bold;">Añadir Punto</button>
 <input id="slider" type="range" min="0" max="1" step="any" value="0.5" />
 
 <div class="card card-info">
-    <img class="card-img-top" src="mosaico_1966.jpg" alt="Imagen ortomosaico 1966">
+    <img class="card-img-top" src="mosaico_1966.jpg" alt="Imagen ortomosaico 1966" style="width: 60%; align-items: center;">
     <div class="card-body">
       <p class="card-text">
        El ortomosaico de 1966 es producto de la georreferenciación de las imágenes del vuelo aerofotogramétrico nacional realizado entre los años 1966-67 a escala 1:40.000, a una altura de vuelo de 6000 metros, con una cámara Wild RC8 N° 701, lente 15 UAG 295 y una distancia focal de 152,61 mm, realizado por la empresa Sofratop.
