@@ -2,13 +2,26 @@
 const map = L.map('map').setView([-33.027, -52.811], 7);
 
 // Capa base debajo del swipe
-const baselayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}.{ext}', {
-  minZoom: 0,
-  maxZoom: 20,
-  attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  ext: 'jpg'
-}).addTo(map);
+const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles © Esri'
+});
 
+const callesWMS = L.tileLayer.wms('https://mapas.mides.gub.uy/geoserver/IDE/wms', {
+  layers: 'IDE:EjesMontevideoIM', // acá debes usar el nombre exacto de la capa WMS de calles
+  format: 'image/png',
+  transparent: true,
+  attribution: 'Calles © MIDES'
+});
+
+const mtopWMS = L.tileLayer.wms('https://geoservicios.mtop.gub.uy/geoserver/inf_tte_ttelog_terrestre/wms', {
+  layers : "v_camineria_nacional",
+  format: 'image/png',
+  transparent: true,
+  attribution: 'Carreteras © MTOP'
+});
+
+// Crear grupo base con satélite y calles MIDES
+const baselayer = L.layerGroup([satellite, callesWMS,mtopWMS ]).addTo(map);
 
 // Capa superior recortada con swipe (1966)
 const topLayer = L.tileLayer.wms("https://mapas.ide.uy/geoserver-raster/ortofotos/ows?", {
@@ -170,4 +183,5 @@ function addMarker(e) {
     markerPlace.textContent = `Nueva posición: ${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)} | Nombre: ${name}`;
   });
 }
+
 
