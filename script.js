@@ -2,12 +2,13 @@
 const map = L.map('map').setView([-33.027, -52.811], 7);
 
 // Capa base debajo del swipe
-const baselayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+const baselayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}.{ext}', {
   minZoom: 0,
   maxZoom: 20,
-  attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenStreetMap</a> contributors',
+  attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   ext: 'jpg'
 }).addTo(map);
+
 
 // Capa superior recortada con swipe (1966)
 const topLayer = L.tileLayer.wms("https://mapas.ide.uy/geoserver-raster/ortofotos/ows?", {
@@ -169,3 +170,4 @@ function addMarker(e) {
     markerPlace.textContent = `Nueva posición: ${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)} | Nombre: ${name}`;
   });
 }
+
