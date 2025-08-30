@@ -21,8 +21,7 @@ const mtopWMS = L.tileLayer.wms('https://geoservicios.mtop.gub.uy/geoserver/inf_
 });
 
 // Crear grupo base con satélite y calles MIDES
-const baselayer = L.layerGroup([satellite, callesWMS,mtopWMS ]).addTo(map);
-
+const baselayer = L.layerGroup([satellite]).addTo(map);
 // Capa superior recortada con swipe (1966)
 const topLayer = L.tileLayer.wms("https://mapas.ide.uy/geoserver-raster/ortofotos/ows?", {
   layers: "ortofoto_1966",
@@ -118,7 +117,7 @@ capaReferencia.addTo(map);
 capaInteres.addTo(map);
 
 // Añadir control de capas (overlay) a la izquierda (por defecto)
-L.control.layers(null, overlayLayers, { collapsed: true, position: 'topleft' }).addTo(map);
+L.control.layers(null, overlayLayers, { collapsed: false, position: 'topleft' }).addTo(map);
 
 
 
@@ -183,5 +182,3 @@ function addMarker(e) {
     markerPlace.textContent = `Nueva posición: ${pos.lat.toFixed(5)}, ${pos.lng.toFixed(5)} | Nombre: ${name}`;
   });
 }
-
-
