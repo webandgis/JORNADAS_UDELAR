@@ -68,7 +68,32 @@ const puntosInteres = {
     { "type": "Feature", "properties": { "nombre": "Santa Catalina", "descripcion": "Puntos Interesantes" }, "geometry": { "type": "Point", "coordinates": [-56.29257553116456, -34.88971177206129] } },
     { "type": "Feature", "properties": { "nombre": "Facultad de Veterinaria", "descripcion": "Puntos Interesantes" }, "geometry": { "type": "Point", "coordinates": [-56.065909964342374, -34.79207956648584] } },
     { "type": "Feature", "properties": { "nombre": "Asentamiento 24 de Junio", "descripcion": "Puntos Interesantes" }, "geometry": { "type": "Point", "coordinates": [-56.09407214661945, -34.79644077617708] } },
-    { "type": "Feature", "properties": { "nombre": "Facultad de Ciencias", "descripcion": "Puntos Interesantes" }, "geometry": { "type": "Point", "coordinates": [-56.11733998776521, -34.8822251337097] } }
+    { "type": "Feature", "properties": { "nombre": "Facultad de Ciencias", "descripcion": "Puntos Interesantes" }, "geometry": { "type": "Point", "coordinates": [-56.11733998776521, -34.8822251337097] } },
+    { "type": "Feature", "properties": {  "nombre": "Punta Carretas Shopping",  "descripcion": "Puntos Interesantes"}, "geometry": {  "type": "Point", "coordinates": [-56.15858560457029, -34.923981325677]  }},
+{ "type": "Feature", "properties": { "nombre": "Montevideo Shopping", "descripcion": "Puntos Interesantes" 
+  }, "geometry": {  "type": "Point",  "coordinates": [-56.13596016039329, -34.90289778848093] 
+  } 
+},{ "type": "Feature", 
+  "properties": { 
+    "nombre": "Unidad Agroalimentaria Metropolitana (UAM)", 
+    "descripcion": "Puntos Interesantes" 
+  }, 
+  "geometry": { 
+    "type": "Point", 
+    "coordinates": [-56.270354288811966, -34.819778200733126] 
+  } 
+},
+{ "type": "Feature", 
+  "properties": { 
+    "nombre": "Faro de Punta Carretas", 
+    "descripcion": "Puntos Interesantes" 
+  }, 
+  "geometry": { 
+    "type": "Point", 
+    "coordinates": [-56.16063280641922, -34.9352081840795] 
+  } 
+}
+    
   ]
 };
 
